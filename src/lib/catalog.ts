@@ -6,7 +6,8 @@ export type AmundiCatalogProduct = {
 };
 export type AmundiCatalogResponse = {
   status: "ok" | "source_unavailable" | "unparsed_source";
-  source: string; retrievedAt?: string; sourceTotal?: number | null; returnedCount?: number;
-  pageCount?: number; completeness?: "complete" | "partial"; notice?: string;
+  source: string; retrievedAt?: string; sourceTotal?: number | null; productCount?: number;
+  listingCount?: number; returnedCount?: number; pageCount?: number;
+  completeness?: "complete" | "partial"; notice?: string;
   products: AmundiCatalogProduct[];
 };
