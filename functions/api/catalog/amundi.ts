@@ -37,7 +37,7 @@ export async function onRequestGet({ request, env }: PagesContext): Promise<Resp
   const requested = new URL(request.url);
   const search = (requested.searchParams.get("q") || "").trim().toLowerCase();
   try {
-    const response = await fetch(sourceUrl, { headers: { "Accept": "text/html", "User-Agent": "InvestPilot/0.1 (+catalogue source attribution)" }, cf: { cacheTtl: 900, cacheEverything: true } });
+    const response = await fetch(sourceUrl, { headers: { "Accept": "text/html", "User-Agent": "InvestPilot/0.1 (+catalogue source attribution)" } });
     if (!response.ok) return Response.json({ status: "source_unavailable", source: sourceUrl, upstreamStatus: response.status, products: [] }, { status: 502 });
     const html = await response.text();
     const products = parseRows(html, sourceUrl);
