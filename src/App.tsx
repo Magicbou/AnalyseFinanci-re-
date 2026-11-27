@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
-import { Activity, ArrowDownRight, ArrowUpRight, BadgeCheck, BookOpen, ChartNoAxesCombined, ChevronDown, ChevronRight, CircleAlert, Database, FileSpreadsheet, FilterX, Layers3, Search, ShieldCheck, SlidersHorizontal, Wallet } from "lucide-react";
+import { useState } from "react";
+import { Activity, ArrowDownRight, ArrowUpRight, BadgeCheck, BookOpen, ChartNoAxesCombined, ChevronDown, CircleAlert, Database, FileSpreadsheet, FilterX, Layers3, Search, ShieldCheck, SlidersHorizontal, Wallet } from "lucide-react";
 
 type Page = "overview" | "etfs" | "portfolio" | "sources";
 
