@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
 import { countUniqueAmundiProducts, discoverAmundiPaginationLinks, extractAmundiTotal, parseAmundiRows } from "./amundi-parser";
 const source = "https://www.amundietf.fr/fr/particuliers/produits-etf/recherche";
-const row = \`<div>ETF_FINDER_SUMMARY</div><table><tbody><tr>
-<td><a>SP5C FP</a></td><td>LYX0Q9</td><td>Amundi Core S&amp;P 500 Swap UCITS ETF Acc Code ISIN LU1135865084</td>
-<td>USD</td><td>0,05 %</td><td>31 882,3 M USD</td><td>Article 6</td><td>87 contrats</td>
-<td>Etats-Unis</td><td>5.2362 25/11/2026</td><td>6,17 %</td><td>8,52 %</td>
-</tr></tbody></table>\`;
+const row = "<div>ETF_FINDER_SUMMARY</div><table><tbody><tr>" +
+  "<td><a>SP5C FP</a></td><td>LYX0Q9</td><td>Amundi Core S&amp;P 500 Swap UCITS ETF Acc Code ISIN LU1135865084</td>" +
+  "<td>USD</td><td>0,05 %</td><td>31 882,3 M USD</td><td>Article 6</td><td>87 contrats</td>" +
+  "<td>Etats-Unis</td><td>5.2362 25/11/2026</td><td>6,17 %</td><td>8,52 %</td>" +
+  "</tr></tbody></table>";
 describe("Amundi public catalogue parser", () => {
   it("extracts a product row and keeps NAV date distinct", () => {
     const [product] = parseAmundiRows(row, source);
